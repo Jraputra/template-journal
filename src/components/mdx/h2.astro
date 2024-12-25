@@ -2,6 +2,20 @@
 const props = Astro.props;
 ---
 
-<h2 {...props}>
+<h2 {...props} class="mdx-h2">
   <slot />
 </h2>
+
+<style>
+  .mdx-h2 {
+    font-family: var(--serif-title);
+    font-size: 2rem;
+    line-height: 2.5rem;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1.25rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    letter-spacing: -0.05rem;
+  }
+</style>

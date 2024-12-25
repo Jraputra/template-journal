@@ -7,6 +7,8 @@ import Blockquote from "../mdx/blockquote.astro";
 import Br from "../mdx/br.astro";
 import Del from "../mdx/del.astro";
 import Em from "../mdx/em.astro";
+import Fn from "../mdx/fn.astro";
+import Footnotes from "../mdx/footnotes.astro";
 import H1 from "../mdx/h1.astro";
 import H2 from "../mdx/h2.astro";
 import H3 from "../mdx/h3.astro";
@@ -33,33 +35,38 @@ type Props = {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
+
+const components = {
+  a: A,
+  blockquote: Blockquote,
+  br: Br,
+  del: Del,
+  em: Em,
+  fn: Fn,
+  footnotes: Footnotes,
+  h1: H1,
+  h2: H2,
+  h3: H3,
+  h4: H4,
+  h5: H5,
+  h6: H6,
+  hr: Hr,
+  i: I,
+  img: Img,
+  input: Input,
+  li: Li,
+  ol: Ol,
+  p: P,
+  strong: Strong,
+  table: Table,
+  td: Td,
+  th: Th,
+  tr: Tr,
+  ul: Ul,
+};
+
 ---
 
-<Content
-  components={{
-    h1: H1,
-    h2: H2,
-    h3: H3,
-    h4: H4,
-    h5: H5,
-    h6: H6,
-    p: P,
-    a: A,
-    blockquote: Blockquote,
-    img: Img,
-    ul: Ul,
-    ol: Ol,
-    li: Li,
-    input: Input,
-    table: Table,
-    tr: Tr,
-    th: Th,
-    td: Td,
-    strong: Strong,
-    em: Em,
-    i: I,
-    del: Del,
-    hr: Hr,
-    br: Br,
-  }}
-/>
+<article class="post-content">
+  <Content components={components} />
+</article>

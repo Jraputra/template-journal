@@ -1,0 +1,27 @@
+---
+import Layout from "../components/layout.astro";
+import { SITE_TITLE } from "../config";
+import P from "../components/mdx/p.astro";
+
+const title = "Technical Notes";
+---
+
+<Layout title={title}>
+  <article class="post-content">
+    <div class="prose">
+      <P>Forked from <a href="https://new-ui.com/templates/journal" target="_blank" rel="noopener noreferrer">Journal Template</a> on December 24th, 2023.</P>
+      <br/>
+      <P>This version includes the following updates:</P>
+      <br/>
+      <P>1: Implemented a simple About page.</P>
+      <br/>
+      <P>2: Created distinct heading styles for pages vs. blog posts, enhancing visual hierarchy.</P>
+      <br/>
+      <P>3: Added footnote system with smooth scroll functionality for better navigation.</P>
+      <br/>
+      <P>4: Integrating additional customizations (ongoing).</P>
+      <br/>
+      <P>5: Implementing embedding functionality (ongoing).</P>
+    </div>
+  </article>
+</Layout>

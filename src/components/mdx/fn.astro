@@ -1,0 +1,12 @@
+---
+const { children } = Astro.props;
+---
+
+<sup class="footnote-ref">{children}</sup>
+
+<style>
+  /* Minimal styles since layout.astro handles most of it */
+  .footnote-ref:hover {
+    color: var(--accent);
+  }
+</style>

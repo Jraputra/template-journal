@@ -1,0 +1,84 @@
+---
+import Layout from "../components/layout.astro";
+---
+
+<Layout title="Login">
+  <div class="login-container">
+    <h1>Login</h1>
+    <form id="loginForm" class="login-form">
+      <div class="form-group">
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" name="password" required />
+      </div>
+      <button type="submit" class="submit-btn">Login</button>
+    </form>
+  </div>
+</Layout>
+
+<style>
+  .login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: var(--spacing-4);
+  }
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+    margin-top: var(--spacing-4);
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+  }
+
+  label {
+    font-family: var(--font-sans);
+    color: var(--text-secondary);
+  }
+
+  input {
+    padding: var(--spacing-2);
+    border: 1px solid var(--border-primary);
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    background: var(--background-secondary);
+    color: var(--text-primary);
+  }
+
+  .submit-btn {
+    background: var(--accent);
+    color: white;
+    padding: var(--spacing-2) var(--spacing-4);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    transition: background 0.2s;
+  }
+
+  .submit-btn:hover {
+    background: var(--accent-dark);
+  }
+</style>
+
+<script>
+  const form = document.getElementById("loginForm") as HTMLFormElement;
+  
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const password = (document.getElementById("login-password") as HTMLInputElement).value;
+    
+    if (password === "313131") {
+      // Set a session token in localStorage
+      localStorage.setItem("editorAuth", "true");
+      // Redirect to editor
+      window.location.href = "/editor";
+    } else {
+      alert("Incorrect password");
+    }
+  });
+</script>

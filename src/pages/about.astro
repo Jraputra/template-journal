@@ -1,0 +1,52 @@
+---
+import Layout from "../components/layout.astro";
+import { SITE_TITLE } from "../config";
+import { H1 } from "../components/mdx/h1.astro";
+import P from "../components/mdx/p.astro";
+import Img from "../components/mdx/img.astro";
+
+const title = "About";
+---
+
+<Layout title={title}>
+  <article class="post-content">
+    <div class="prose">
+      <div class="about-image">
+        <Img src="/about.jpg" />
+      </div>
+      <P>I'm Jati, and I'm deeply passionate about creating systemic change and building institutions that serve the underserved. My journey began with Muhammad Yunus' "Banker to the Poor" - a book that opened my eyes to the possibilities of improving the world through sustainable, scalable solutions. Beyond social impact literature, I'm an avid reader of science fiction, Borges, and webfiction, and have been shaped by rationalist writings from LessWrong and Astral Codex Ten since my college years.</P>
+      <br/>
+      <P>My commitment to social impact takes multiple forms. I regularly donate 5-20% of my income to carefully selected local foundations (yayasans), where I also provide management consulting to amplify their effectiveness. Given Indonesia's purchasing power dynamics, I've chosen to focus on developing deep, ground-level understanding of local altruistic initiatives rather than purely pursuing earning-to-give strategies.</P>
+      <br/>
+      <P>Beyond my professional work, I maintain a meditation practice and find particular value in Buddhist teachings, especially works like Brasington's exploration of Dependent Origination and Roaring Silence. I'm currently exploring ways to bridge local impact with global effective altruism communities, considering how these different spheres of influence might meaningfully intersect.</P>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .post-content {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: var(--spacing-6) var(--spacing-2);
+  }
+
+  .prose {
+    max-width: var(--content-width-prose);
+    margin: 0 auto;
+  }
+
+  .about-image {
+    display: flex;
+    justify-content: center;
+    margin: var(--spacing-10) auto var(--spacing-10);
+    max-width: 800px;
+    padding: 0 var(--spacing-4);
+  }
+
+  .about-image :global(img) {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    object-fit: cover;
+  }
+</style>

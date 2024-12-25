@@ -16,6 +16,7 @@ const { title, description } = Astro.props;
 <html lang="en" data-new-ui-theme="light--warm">
   <head>
     <Meta title={title ? `${title} · ${SITE_TITLE}` : SITE_TITLE} description={description ?? SITE_DESCRIPTION} />
+    <script src="../scripts/footnote-scroll.js"></script>
   </head>
   <body>
     <Header />
@@ -477,6 +478,75 @@ footer p {
     color: var(--text-secondary-alt);
     position: relative;
     width: 100%;
+}
+
+/* footnotes */
+
+.footnote-ref {
+    font-family: var(--serif-copy);
+    font-size: 0.75em;
+    vertical-align: super;
+    line-height: 0;
+    position: relative;
+    top: -0.1em;
+}
+
+.footnote-ref a {
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.footnote-ref a:hover {
+    color: var(--accent);
+}
+
+.footnotes {
+    margin-top: var(--spacing-12);
+    padding-top: var(--spacing-12);
+    border-top: 1px solid var(--border-muted);
+}
+
+.footnotes > h2 {
+    font-size: 2rem;
+    line-height: 1rem;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0;
+}
+
+.footnotes ol {
+    font-family: var(--serif-copy);
+    font-size: 0.2rem;
+    line-height: 1rem;
+    color: var(--text-secondary);
+}
+
+.footnotes li {
+    margin-bottom: var(--spacing-4);
+}
+
+.footnote-backref {
+    margin-left: var(--spacing-2);
+    color: var(--accent);
+    opacity: 0.7;
+    text-decoration: none;
+}
+
+.footnote-backref:hover {
+    opacity: 1;
+}
+
+.footnote-highlight {
+    animation: highlight 2s ease-out;
+}
+
+@keyframes highlight {
+    0% {
+      background-color: var(--accent-light);
+    }
+    100% {
+      background-color: transparent;
+    }
 }
 
 /* media queries */

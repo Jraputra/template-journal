@@ -1,0 +1,32 @@
+---
+const { children } = Astro.props;
+---
+
+<div class="footnotes">
+  <hr class="footnotes-separator" />
+  <ol>
+    {children}
+  </ol>
+</div>
+
+<style>
+  /* We only need minimal styles here since layout.astro handles most of it */
+  .footnotes-separator {
+    margin: var(--spacing-8) 0;
+    border: none;
+    border-top: 1px solid var(--border-primary);
+  }
+
+  .footnotes ol {
+    list-style-position: outside;
+    padding-left: var(--spacing-8);
+  }
+
+  /* Target both the footnote and the reference when highlighted */
+  .footnote-highlight,
+  li[id^="user-content-fn-"].footnote-highlight,
+  li[id^="user-content-fnref-"].footnote-highlight {
+    background-color: var(--accent-light);
+    transition: background-color 0.3s ease;
+  }
+</style>

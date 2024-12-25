@@ -1,25 +1,30 @@
 export const SITE_FAVICON = "/favicon.png";
 export const SITE_LOGO = "/journal-logo.svg";
-export const SITE_TITLE = "Journal";
+export const SITE_TITLE = "Paraglyph";
 export const SITE_DESCRIPTION =
   "Blog";
 
 export const MENUS = [
   {
-    title: "Posts",
+    title: "Post",
     link: "/posts",
     target: "_self",
   },
   {
-    title: "Tags",
+    title: "ABT",
+    link: "/about",
+    target: "_self",
+  },
+  {
+    title: "TAG",
     link: "/tags",
     target: "_self",
   },
   {
-    title: "Download",
-    link: "https://new-ui.com/templates/journal",
-    target: "_blank",
+    title: "CRD",
+    link: "/tech-notes",
+    target: "_self",
   }
 ];
 
-export const FOOTER_CONTENT = "Love Everyone";
+export const FOOTER_CONTENT = "jati @ 2024";
